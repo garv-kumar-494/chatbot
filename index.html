@@ -51,7 +51,8 @@
   <script>
     // 1️⃣ Auto-send website content once
     window.addEventListener("DOMContentLoaded", async () => {
-      const content = document.body.innerText.slice(0, 3000);
+      const content = document.documentElement.innerText.slice(0, 3000);
+      const url = window.location.href;
       try {
         await fetch("https://garvlolla.app.n8n.cloud/webhook/sitebotscrape", {
           method: "POST",
